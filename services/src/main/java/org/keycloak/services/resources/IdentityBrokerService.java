@@ -775,6 +775,7 @@ public class IdentityBrokerService implements IdentityProvider.AuthenticationCal
         context.getIdp().authenticationFinished(authSession, context);
         authSession.setUserSessionNote(Details.IDENTITY_PROVIDER, providerId);
         authSession.setUserSessionNote(Details.IDENTITY_PROVIDER_USERNAME, context.getUsername());
+        authSession.setUserSessionNote(Details.IDENTITY_PROVIDER_USER_ID, context.getId());
 
         event.detail(Details.IDENTITY_PROVIDER, providerId)
                 .detail(Details.IDENTITY_PROVIDER_USERNAME, context.getUsername());
